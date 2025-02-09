@@ -4,18 +4,22 @@ import Home from "./pages/Home";
 import Students from "./pages/Students";
 import Teachers from "./pages/Teachers";
 import Courses from "./pages/Courses";
-import NotFound from "./pages/NotFound"; // 404 Error Page
+import Finance from "./pages/Finance";  
+import Settings from "./pages/Settings";  
+
 
 const routes = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <NotFound />, // Handles any unknown routes
+    errorElement: <NotFound />,
     children: [
       { path: "/", element: <Home /> },
       { path: "/students", element: <Students /> },
       { path: "/teachers", element: <Teachers /> },
       { path: "/courses", element: <Courses /> },
+      { path: "/finance", element: <Finance /> },  
+      { path: "/settings", element: <Settings /> }  
     ],
   },
 ]);
