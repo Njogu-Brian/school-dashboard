@@ -19,17 +19,51 @@ const AddTransactionForm = ({ onAdd }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="transaction-form">
-      <h3>Add Transaction</h3>
-      <input type="text" name="description" placeholder="Description" value={newTransaction.description} onChange={handleChange} required />
-      <input type="number" name="amount" placeholder="Amount" value={newTransaction.amount} onChange={handleChange} required />
-      <select name="type" value={newTransaction.type} onChange={handleChange}>
-        <option value="income">Income</option>
-        <option value="expense">Expense</option>
-      </select>
-      <input type="date" name="date" value={newTransaction.date} onChange={handleChange} required />
-      <button type="submit">Add Transaction</button>
-    </form>
+    <div className="card p-3 mt-3 shadow-sm">
+      <h4 className="text-center">Add a New Transaction</h4>
+      <form onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label className="form-label">Description</label>
+          <input 
+            type="text" 
+            name="description" 
+            className="form-control"
+            placeholder="Enter description"
+            value={newTransaction.description} 
+            onChange={handleChange} 
+            required 
+          />
+        </div>
+
+        <div className="mb-3">
+          <label className="form-label">Amount ($)</label>
+          <input 
+            type="number" 
+            name="amount" 
+            className="form-control"
+            placeholder="Enter amount"
+            value={newTransaction.amount} 
+            onChange={handleChange} 
+            required 
+          />
+        </div>
+
+        <div className="mb-3">
+          <label className="form-label">Type</label>
+          <select name="type" className="form-control" value={newTransaction.type} onChange={handleChange}>
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+        </div>
+
+        <div className="mb-3">
+          <label className="form-label">Date</label>
+          <input type="date" name="date" className="form-control" value={newTransaction.date} onChange={handleChange} required />
+        </div>
+
+        <button type="submit" className="btn btn-primary w-100">Add Transaction</button>
+      </form>
+    </div>
   );
 };
 

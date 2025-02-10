@@ -3,6 +3,7 @@ import FinanceSummary from "../components/finance/FinanceSummary";
 import AddTransactionForm from "../components/finance/AddTransactionForm";
 import TransactionList from "../components/finance/TransactionList";
 import SortFilterControls from "../components/finance/SortFilterControls";
+import "../styles/Finance.css"; // Import styles
 
 const Finance = () => {
   const [transactions, setTransactions] = useState([]);
@@ -48,8 +49,8 @@ const Finance = () => {
   };
 
   return (
-    <div>
-      <h2>Finance</h2>
+    <div className="finance-container">
+      <h2 className="text-center mt-4">💰 Financial Overview</h2>
       <FinanceSummary summary={financeSummary} />
       <SortFilterControls sortOption={sortOption} setSortOption={setSortOption} filterType={filterType} setFilterType={setFilterType} />
       <AddTransactionForm onAdd={handleAddTransaction} />
