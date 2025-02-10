@@ -6,9 +6,8 @@ const AddCourseForm = ({ onAddCourse }) => {
         instructor: "",
         duration: "",
     });
-    const [teachers, setTeachers] = useState([]); // Store teachers list
+    const [teachers, setTeachers] = useState([]);
 
-    // Fetch teachers to populate dropdown
     useEffect(() => {
         fetch("http://localhost:4000/teachers")
             .then((res) => res.json())
@@ -16,12 +15,10 @@ const AddCourseForm = ({ onAddCourse }) => {
             .catch((error) => console.error("Error fetching teachers:", error));
     }, []);
 
-    // Handle form input change
     const handleChange = (e) => {
         setNewCourse({ ...newCourse, [e.target.name]: e.target.value });
     };
 
-    // Handle form submit
     const handleSubmit = (e) => {
         e.preventDefault();
         
@@ -32,48 +29,63 @@ const AddCourseForm = ({ onAddCourse }) => {
         })
         .then((res) => res.json())
         .then((data) => {
-            onAddCourse(data); // Update UI
-            setNewCourse({ title: "", instructor: "", duration: "" }); // Reset form
+            onAddCourse(data);
+            setNewCourse({ title: "", instructor: "", duration: "" });
         })
         .catch((error) => console.error("Error adding course:", error));
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input 
-                type="text"
-                name="title"
-                placeholder="Course Title"
-                value={newCourse.title}
-                onChange={handleChange}
-                required
-            />
-            
-            {/* Dropdown for Instructor */}
-            <select 
-                name="instructor" 
-                value={newCourse.instructor} 
-                onChange={handleChange}
-                required
-            >
-                <option value="">Select Instructor</option>
-                {teachers.map((teacher) => (
-                    <option key={teacher.id} value={teacher.name}>
-                        {teacher.name}
-                    </option>
-                ))}
-            </select>
+        <div className="card p-3 mt-3 shadow-sm">
+            <h4 className="text-center">Add a New Course</h4>
+            <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                    <label className="form-label">Course Title</label>
+                    <input 
+                        type="text"
+                        name="title"
+                        className="form-control"
+                        placeholder="Enter course title"
+                        value={newCourse.title}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
 
-            <input 
-                type="number"
-                name="duration"
-                placeholder="Duration (weeks)"
-                value={newCourse.duration}
-                onChange={handleChange}
-                required
-            />
-            <button type="submit">Add Course</button>
-        </form>
+                <div className="mb-3">
+                    <label className="form-label">Instructor</label>
+                    <select 
+                        name="instructor" 
+                        className="form-control"
+                        value={newCourse.instructor} 
+                        onChange={handleChange}
+                        required
+                    >
+                        <option value="">Select Instructor</option>
+                        {teachers.map((teacher) => (
+                            <option key={teacher.id} value={teacher.name}>
+                                {teacher.name}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+
+                <div className="mb-3">
+                    <label className="form-label">Duration (weeks)</label>
+                    <input 
+                        type="number"
+                        name="duration"
+                        className="form-control"
+                        placeholder="Enter duration in weeks"
+                        value={newCourse.duration}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                
+                <button type="submit" className="btn btn-primary w-100">Add Course</button>
+            </form>
+        </div>
     );
 };
 

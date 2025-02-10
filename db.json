@@ -49,20 +49,26 @@
     {
       "id": "c1",
       "title": "Mathematics",
-      "instructor": "John Doe",
+      "instructor": "Purity Mwari",
       "duration": "12"
     },
     {
       "id": "c2",
       "title": "English Literature",
-      "instructor": "Jane Smith",
-      "duration": "10"
+      "instructor": "John Kamau",
+      "duration": "11"
     },
     {
       "id": "c3",
       "title": "Physics",
       "instructor": "Brian Njogu",
       "duration": "14"
+    },
+    {
+      "id": "a862",
+      "title": "Biology",
+      "instructor": "Brian Njogu",
+      "duration": "13"
     }
   ],
   "transactions": [
