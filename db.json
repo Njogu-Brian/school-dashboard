@@ -18,5 +18,25 @@
       "age": "14",
       "grade": "9"
     }
+  ],
+  "teachers": [
+    {
+      "id": "t1",
+      "name": "John Doe",
+      "subject": "Mathematics",
+      "experience": "11"
+    },
+    {
+      "id": "t2",
+      "name": "Jane Smith",
+      "subject": "English",
+      "experience": "8"
+    },
+    {
+      "id": "c662",
+      "name": "Brian Njogu",
+      "subject": "Science",
+      "experience": "14"
+    }
   ]
 }
