@@ -1,19 +1,22 @@
 {
-    "students": [
-      { "id": 1, "name": "John Doe", "grade": "A" },
-      { "id": 2, "name": "Jane Smith", "grade": "B" }
-    ],
-    "teachers": [
-      { "id": 1, "name": "Mr. Anderson", "subject": "Mathematics" },
-      { "id": 2, "name": "Ms. Johnson", "subject": "Science" }
-    ],
-    "courses": [
-      { "id": 1, "name": "Mathematics", "teacher": "Mr. Anderson" },
-      { "id": 2, "name": "Science", "teacher": "Ms. Johnson" }
-    ],
-    "finance": [
-      { "id": 1, "description": "Tuition Fee", "amount": 5000 },
-      { "id": 2, "description": "Books & Supplies", "amount": 1200 }
-    ]
-  }
-  
+  "students": [
+    {
+      "id": "9fb6",
+      "name": "Brian Njogu",
+      "age": "12",
+      "grade": "Grade 8"
+    },
+    {
+      "id": "f7bb",
+      "name": "Mirriam Kamau",
+      "age": "7",
+      "grade": "Grade 1"
+    },
+    {
+      "id": "158e",
+      "name": "Ann Kathomi",
+      "age": "14",
+      "grade": "9"
+    }
+  ]
+}
