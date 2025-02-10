@@ -6,7 +6,9 @@ function App() {
   return (
     <div>
       <NavBar />
-      <Outlet />
+      <div className="content">
+        <Outlet />  {/* This will render the current page */}
+      </div>
     </div>
   );
 }

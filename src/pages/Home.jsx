@@ -4,7 +4,7 @@ function Home() {
   return (
     <div>
       <h1>Welcome to the School Dashboard</h1>
-      <p>Manage students, teachers, and courses efficiently.</p>
+      <p>Select a section from the navigation bar.</p>
     </div>
   );
 }
