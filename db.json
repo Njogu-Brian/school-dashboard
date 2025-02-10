@@ -1,0 +1,19 @@
+{
+    "students": [
+      { "id": 1, "name": "John Doe", "grade": "A" },
+      { "id": 2, "name": "Jane Smith", "grade": "B" }
+    ],
+    "teachers": [
+      { "id": 1, "name": "Mr. Anderson", "subject": "Mathematics" },
+      { "id": 2, "name": "Ms. Johnson", "subject": "Science" }
+    ],
+    "courses": [
+      { "id": 1, "name": "Mathematics", "teacher": "Mr. Anderson" },
+      { "id": 2, "name": "Science", "teacher": "Ms. Johnson" }
+    ],
+    "finance": [
+      { "id": 1, "description": "Tuition Fee", "amount": 5000 },
+      { "id": 2, "description": "Books & Supplies", "amount": 1200 }
+    ]
+  }
+  
