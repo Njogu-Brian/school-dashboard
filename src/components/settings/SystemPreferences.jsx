@@ -17,14 +17,14 @@ const SystemPreferences = ({ settings, setSettings }) => {
   };
 
   return (
-    <div>
-      <h3>System Preferences</h3>
-      <label>Theme: </label>
-      <select value={theme} onChange={(e) => setTheme(e.target.value)}>
+    <div className="card p-3 mb-4">
+      <h4 className="text-dark">🎨 System Preferences</h4>
+      <label className="form-label">Theme:</label>
+      <select className="form-select mb-3" value={theme} onChange={(e) => setTheme(e.target.value)}>
         <option value="light">Light</option>
         <option value="dark">Dark</option>
       </select>
-      <button onClick={handleSave}>Save</button>
+      <button className="btn btn-primary w-100" onClick={handleSave}>Save</button>
     </div>
   );
 };

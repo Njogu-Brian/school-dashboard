@@ -10,10 +10,12 @@ const BackupRestore = () => {
   };
 
   return (
-    <div>
-      <h3>Backup & Restore</h3>
-      <button onClick={handleBackup}>Backup Data</button>
-      <button onClick={handleRestore}>Restore Data</button>
+    <div className="card p-3 mb-4">
+      <h4 className="text-dark">💾 Backup & Restore</h4>
+      <div className="d-flex gap-2">
+        <button className="btn btn-warning flex-grow-1" onClick={handleBackup}>Backup Data</button>
+        <button className="btn btn-danger flex-grow-1" onClick={handleRestore}>Restore Data</button>
+      </div>
     </div>
   );
 };

@@ -3,6 +3,7 @@ import GeneralSettings from "../components/settings/GeneralSettings";
 import UserManagement from "../components/settings/UserManagement";
 import SystemPreferences from "../components/settings/SystemPreferences";
 import BackupRestore from "../components/settings/BackupRestore";
+import "bootstrap/dist/css/bootstrap.min.css"; // Ensure Bootstrap is imported
 
 const Settings = () => {
   const [settings, setSettings] = useState(null);
@@ -15,15 +16,23 @@ const Settings = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Settings</h2>
+    <div className="container mt-4">
+      <h2 className="mb-3 text-primary">⚙️ Settings</h2>
+
       {settings ? (
-        <>
-          <GeneralSettings settings={settings} setSettings={setSettings} />
-          <UserManagement settings={settings} setSettings={setSettings} />
-          <SystemPreferences settings={settings} setSettings={setSettings} />
-          <BackupRestore />
-        </>
+        <div className="row">
+          {/* Left Column */}
+          <div className="col-md-6">
+            <GeneralSettings settings={settings} setSettings={setSettings} />
+            <UserManagement settings={settings} setSettings={setSettings} />
+          </div>
+
+          {/* Right Column */}
+          <div className="col-md-6">
+            <SystemPreferences settings={settings} setSettings={setSettings} />
+            <BackupRestore />
+          </div>
+        </div>
       ) : (
         <p>Loading settings...</p>
       )}

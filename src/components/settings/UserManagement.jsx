@@ -21,24 +21,39 @@ const UserManagement = ({ settings, setSettings }) => {
   };
 
   return (
-    <div>
-      <h3>User Management</h3>
-      <ul>
+    <div className="card p-3 mb-4">
+      <h4 className="text-dark">👥 User Management</h4>
+
+      {/* List Users */}
+      <ul className="list-group mb-3">
         {users.map((user) => (
-          <li key={user.id}>{user.name} - {user.role}</li>
+          <li key={user.id} className="list-group-item">
+            {user.name} - <span className="text-muted">{user.role}</span>
+          </li>
         ))}
       </ul>
-      <input 
-        type="text" 
-        placeholder="User Name" 
-        value={newUser.name} 
-        onChange={(e) => setNewUser({ ...newUser, name: e.target.value })} 
-      />
-      <select value={newUser.role} onChange={(e) => setNewUser({ ...newUser, role: e.target.value })}>
-        <option value="admin">Admin</option>
-        <option value="teacher">Teacher</option>
-      </select>
-      <button onClick={handleAddUser}>Add User</button>
+
+      {/* Add User Form */}
+      <div className="input-group">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="User Name"
+          value={newUser.name}
+          onChange={(e) => setNewUser({ ...newUser, name: e.target.value })}
+        />
+        <select
+          className="form-select"
+          value={newUser.role}
+          onChange={(e) => setNewUser({ ...newUser, role: e.target.value })}
+        >
+          <option value="admin">Admin</option>
+          <option value="teacher">Teacher</option>
+        </select>
+        <button className="btn btn-success" onClick={handleAddUser}>
+          Add User
+        </button>
+      </div>
     </div>
   );
 };
