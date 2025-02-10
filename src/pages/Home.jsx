@@ -1,6 +1,6 @@
 import React from "react";
 import dashboardData from "../Data/dashboardData";
-import DashboardCard from "../components/Dashboard/DashboardCard";
+import DashboardCard from "../components/Dashboard/dashboardCard";
 
 const Home = () => {
   return (

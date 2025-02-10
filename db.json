@@ -42,21 +42,97 @@
   "courses": [
     {
       "id": "c1",
-      "title": "Algebra Basics",
-      "instructor": "Jane Smith",
-      "duration": "11"
+      "title": "Mathematics",
+      "instructor": "John Doe",
+      "duration": "12"
     },
     {
       "id": "c2",
-      "title": "English Grammar",
-      "instructor": "John Doe",
+      "title": "English Literature",
+      "instructor": "Jane Smith",
       "duration": "10"
     },
     {
       "id": "c3",
-      "title": "Biology Fundamentals",
+      "title": "Physics",
       "instructor": "Brian Njogu",
       "duration": "14"
     }
-  ]
+  ],
+  "transactions": [
+    {
+      "id": "t1",
+      "description": "School Fees Payment",
+      "amount": 500,
+      "type": "income",
+      "date": "2024-02-01"
+    },
+    {
+      "id": "t2",
+      "description": "Library Books Purchase",
+      "amount": 200,
+      "type": "expense",
+      "date": "2024-02-05"
+    },
+    {
+      "id": "t3",
+      "description": "School Bus Fee",
+      "amount": 300,
+      "type": "income",
+      "date": "2024-02-08"
+    },
+    {
+      "id": "t4",
+      "description": "Tuition Fee",
+      "amount": 10000,
+      "type": "income",
+      "date": "2025-12-10"
+    }
+  ],
+  "settings": {
+    "item": {
+      "school_name": "Royal Kings School",
+      "academic_year": "2024",
+      "theme": "light",
+      "modules_enabled": {
+        "finance": true,
+        "student_management": true,
+        "teacher_management": true,
+        "attendance": false
+      },
+      "users": [
+        {
+          "id": "u1",
+          "name": "Admin User",
+          "role": "admin"
+        },
+        {
+          "id": "u2",
+          "name": "John Doe",
+          "role": "teacher"
+        }
+      ]
+    },
+    "school_name": "Royal Kings School",
+    "academic_year": "2025",
+    "theme": "dark",
+    "modules_enabled": {
+      "finance": true,
+      "student_management": true,
+      "teacher_management": true,
+      "attendance": false
+    },
+    "users": [
+      {
+        "id": "u1",
+        "name": "Admin User",
+        "role": "admin"
+      },
+      {
+        "id": "u2",
+        "name": "John Doe",
+        "role": "teacher"
+      }
+    ]
+  }
 }

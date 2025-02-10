@@ -1,36 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import GeneralSettings from "../components/settings/GeneralSettings";
+import UserManagement from "../components/settings/UserManagement";
+import SystemPreferences from "../components/settings/SystemPreferences";
+import BackupRestore from "../components/settings/BackupRestore";
 
-function Settings() {
-  const [theme, setTheme] = useState("Light");
-  const [language, setLanguage] = useState("English");
+const Settings = () => {
+  const [settings, setSettings] = useState(null);
+
+  useEffect(() => {
+    fetch("http://localhost:4000/settings")
+      .then((res) => res.json())
+      .then((data) => setSettings(data))
+      .catch((err) => console.error("Error fetching settings:", err));
+  }, []);
 
   return (
     <div>
-      <h1>Settings</h1>
-      <p>Configure your school dashboard preferences.</p>
-
-      <h2>Appearance</h2>
-      <label>Theme: </label>
-      <select value={theme} onChange={(e) => setTheme(e.target.value)}>
-        <option>Light</option>
-        <option>Dark</option>
-      </select>
-
-      <h2>Language</h2>
-      <label>Choose Language: </label>
-      <select value={language} onChange={(e) => setLanguage(e.target.value)}>
-        <option>English</option>
-        <option>French</option>
-        <option>Spanish</option>
-        <option>Swahili</option>
-      </select>
-
-      <h2>System Settings</h2>
-      <button onClick={() => alert("System Settings Updated!")}>
-        Save Changes
-      </button>
+      <h2>Settings</h2>
+      {settings ? (
+        <>
+          <GeneralSettings settings={settings} setSettings={setSettings} />
+          <UserManagement settings={settings} setSettings={setSettings} />
+          <SystemPreferences settings={settings} setSettings={setSettings} />
+          <BackupRestore />
+        </>
+      ) : (
+        <p>Loading settings...</p>
+      )}
     </div>
   );
-}
+};
 
 export default Settings;

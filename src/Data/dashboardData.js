@@ -35,6 +35,7 @@ const dashboardData = [
     description: "Customize school settings, user roles, and system configurations.",
     link: "/settings"
   }
+  
 ];
 
 export default dashboardData;
