@@ -1,15 +1,51 @@
 import React from "react";
 
-const EditTeacherForm = ({ teacher, onChange, onSave, onCancel }) => {
+const EditTeacherForm = ({ editingTeacher, onEditChange, onSaveEdit, onCancelEdit }) => {
+    if (!editingTeacher) {
+        return null; // Prevents rendering the form if there's no teacher selected
+    }
+
     return (
-        <form onSubmit={onSave} style={{ background: "#f4f4f4", padding: "10px", marginBottom: "20px" }}>
-            <h3>Editing {teacher.name}</h3>
-            <input type="text" name="name" value={teacher.name} onChange={onChange} required />
-            <input type="text" name="subject" value={teacher.subject} onChange={onChange} required />
-            <input type="number" name="experience" value={teacher.experience} onChange={onChange} required />
-            <button type="submit">Save Changes</button>
-            <button type="button" onClick={onCancel}>Cancel</button>
-        </form>
+        <div className="card p-3 mt-3 shadow-sm bg-light">
+            <h4 className="text-center">Edit Teacher</h4>
+            <form onSubmit={onSaveEdit}>
+                <div className="mb-3">
+                    <label className="form-label">Name</label>
+                    <input 
+                        type="text" 
+                        className="form-control" 
+                        name="name" 
+                        value={editingTeacher?.name || ""} 
+                        onChange={onEditChange} 
+                        required 
+                    />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">Subject</label>
+                    <input 
+                        type="text" 
+                        className="form-control" 
+                        name="subject" 
+                        value={editingTeacher?.subject || ""} 
+                        onChange={onEditChange} 
+                        required 
+                    />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">Years of Experience</label>
+                    <input 
+                        type="number" 
+                        className="form-control" 
+                        name="experience" 
+                        value={editingTeacher?.experience || ""} 
+                        onChange={onEditChange} 
+                        required 
+                    />
+                </div>
+                <button type="submit" className="btn btn-primary">Save Changes</button>
+                <button type="button" className="btn btn-secondary ms-2" onClick={onCancelEdit}>Cancel</button>
+            </form>
+        </div>
     );
 };
 

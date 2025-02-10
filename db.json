@@ -4,39 +4,45 @@
       "id": "9fb6",
       "name": "Brian Njogu",
       "age": "12",
-      "grade": "Grade 8"
+      "grade": "8"
     },
     {
       "id": "f7bb",
       "name": "Mirriam Kamau",
       "age": "7",
-      "grade": "Grade 1"
+      "grade": "1"
     },
     {
       "id": "158e",
       "name": "Ann Kathomi",
       "age": "14",
       "grade": "9"
+    },
+    {
+      "id": "93f7",
+      "name": "Astrid Keyla",
+      "age": "7",
+      "grade": "1"
     }
   ],
   "teachers": [
     {
       "id": "t1",
-      "name": "John Doe",
+      "name": "John Kamau",
       "subject": "Mathematics",
       "experience": "11"
-    },
-    {
-      "id": "t2",
-      "name": "Jane Smith",
-      "subject": "English",
-      "experience": "8"
     },
     {
       "id": "c662",
       "name": "Brian Njogu",
       "subject": "Science",
-      "experience": "14"
+      "experience": "15"
+    },
+    {
+      "id": "fa2e",
+      "name": "Purity Mwari",
+      "subject": "Swahili",
+      "experience": "3"
     }
   ],
   "courses": [
