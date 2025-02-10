@@ -38,5 +38,25 @@
       "subject": "Science",
       "experience": "14"
     }
+  ],
+  "courses": [
+    {
+      "id": "c1",
+      "title": "Algebra Basics",
+      "instructor": "Jane Smith",
+      "duration": "11"
+    },
+    {
+      "id": "c2",
+      "title": "English Grammar",
+      "instructor": "John Doe",
+      "duration": "10"
+    },
+    {
+      "id": "c3",
+      "title": "Biology Fundamentals",
+      "instructor": "Brian Njogu",
+      "duration": "14"
+    }
   ]
 }
