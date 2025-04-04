@@ -1,46 +1,33 @@
 /* StudentList.css */
-.student-list {
-    margin-top: 20px;
-  }
-  
-  .student-card {
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .student-card h3 {
-    color: #007bff;
-    font-size: 1.2rem;
-  }
-  
-  .student-card p {
-    font-size: 1rem;
-    color: #555;
-  }
-  
-  .student-actions {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
-  
-  .student-actions button {
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .student-actions .edit {
-    background-color: #28a745;
-    color: white;
-  }
-  
-  .student-actions .delete {
-    background-color: #dc3545;
-    color: white;
-  }
-  
+.student-list-container {
+  padding: 15px;
+  border-radius: 8px;
+  background: var(--bg-color);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode */
+[data-theme='dark'] .student-list-container {
+  background: #1e1e1e;
+  color: white;
+}
+
+/* Table Styles */
+.table {
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+/* Sorting Controls */
+.sorting-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+/* Pagination Controls */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}

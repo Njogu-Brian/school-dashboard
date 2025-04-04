@@ -3,7 +3,8 @@ import StudentList from "../components/Students/StudentList";
 import AddStudentForm from "../components/Students/AddStudentForm";
 import EditStudentForm from "../components/Students/EditStudentForm";
 import SortFilterControls from "../components/Students/SortFilterControls";
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/Students.css"; 
 
 const Students = () => {
     const [students, setStudents] = useState([]);
@@ -70,12 +71,52 @@ const Students = () => {
         .sort(sortStudents);
 
     return (
-        <div>
-            <h2>Students</h2>
-            <SortFilterControls sortOption={sortOption} setSortOption={setSortOption} showOnlyGrade={showOnlyGrade} setShowOnlyGrade={setShowOnlyGrade} />
-            <AddStudentForm onAddStudent={addStudent} />
-            {editingStudent && <EditStudentForm editingStudent={editingStudent} onEditChange={editStudent} onSaveEdit={saveEditStudent} onCancelEdit={() => setEditingStudent(null)} />}
-            <StudentList students={filteredStudents} onEditClick={setEditingStudent} onDeleteClick={deleteStudent} />
+        <div className="container student-container">
+            <h2 className="text-center mb-4">🎓 Students Management</h2>
+
+            {/* Sorting & Filtering Controls */}
+            <SortFilterControls 
+                sortOption={sortOption} 
+                setSortOption={setSortOption} 
+                showOnlyGrade={showOnlyGrade} 
+                setShowOnlyGrade={setShowOnlyGrade} 
+            />
+
+            {/* Row Layout for Forms & Student List */}
+            <div className="row">
+                <div className="col-md-5">
+                    {/* Add Student Form */}
+                    <div className="card shadow p-3">
+                        <h5>Add Student</h5>
+                        <AddStudentForm onAddStudent={addStudent} />
+                    </div>
+
+                    {/* Edit Student Form */}
+                    {editingStudent && (
+                        <div className="card shadow p-3 mt-3">
+                            <h5>Edit Student</h5>
+                            <EditStudentForm 
+                                editingStudent={editingStudent} 
+                                onEditChange={editStudent} 
+                                onSaveEdit={saveEditStudent} 
+                                onCancelEdit={() => setEditingStudent(null)} 
+                            />
+                        </div>
+                    )}
+                </div>
+
+                {/* Student List Section */}
+                <div className="col-md-7">
+                    <div className="card shadow p-3">
+                        <h5>Student List</h5>
+                        <StudentList 
+                            students={filteredStudents} 
+                            onEditClick={setEditingStudent} 
+                            onDeleteClick={deleteStudent} 
+                        />
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

@@ -1,32 +1,21 @@
-/* Courses.css */
-.courses-container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.list-group-item {
-    transition: transform 0.2s ease-in-out;
-}
-
-.list-group-item:hover {
-    transform: scale(1.02);
-    background-color: #f8f9fa;
+.course-header {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .card {
-    background: #f5f5f5;
+    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.table th {
+    text-align: center;
 }
 
 .btn {
-    transition: all 0.3s ease-in-out;
-}
-
-.btn:hover {
-    opacity: 0.8;
+    font-size: 14px;
 }

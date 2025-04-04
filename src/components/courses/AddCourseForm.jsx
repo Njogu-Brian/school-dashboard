@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Form, Button } from "react-bootstrap";
 
 const AddCourseForm = ({ onAddCourse }) => {
     const [newCourse, setNewCourse] = useState({
@@ -36,56 +37,45 @@ const AddCourseForm = ({ onAddCourse }) => {
     };
 
     return (
-        <div className="card p-3 mt-3 shadow-sm">
-            <h4 className="text-center">Add a New Course</h4>
-            <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                    <label className="form-label">Course Title</label>
-                    <input 
-                        type="text"
-                        name="title"
-                        className="form-control"
-                        placeholder="Enter course title"
-                        value={newCourse.title}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
+        <Form onSubmit={handleSubmit}>
+            <h5 className="text-center">Add a New Course</h5>
 
-                <div className="mb-3">
-                    <label className="form-label">Instructor</label>
-                    <select 
-                        name="instructor" 
-                        className="form-control"
-                        value={newCourse.instructor} 
-                        onChange={handleChange}
-                        required
-                    >
-                        <option value="">Select Instructor</option>
-                        {teachers.map((teacher) => (
-                            <option key={teacher.id} value={teacher.name}>
-                                {teacher.name}
-                            </option>
-                        ))}
-                    </select>
-                </div>
+            <Form.Group className="mb-3">
+                <Form.Label>Course Title</Form.Label>
+                <Form.Control 
+                    type="text"
+                    name="title"
+                    placeholder="Enter course title"
+                    value={newCourse.title}
+                    onChange={handleChange}
+                    required
+                />
+            </Form.Group>
 
-                <div className="mb-3">
-                    <label className="form-label">Duration (weeks)</label>
-                    <input 
-                        type="number"
-                        name="duration"
-                        className="form-control"
-                        placeholder="Enter duration in weeks"
-                        value={newCourse.duration}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                
-                <button type="submit" className="btn btn-primary w-100">Add Course</button>
-            </form>
-        </div>
+            <Form.Group className="mb-3">
+                <Form.Label>Instructor</Form.Label>
+                <Form.Select name="instructor" value={newCourse.instructor} onChange={handleChange} required>
+                    <option value="">Select Instructor</option>
+                    {teachers.map((teacher) => (
+                        <option key={teacher.id} value={teacher.name}>{teacher.name}</option>
+                    ))}
+                </Form.Select>
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+                <Form.Label>Duration (weeks)</Form.Label>
+                <Form.Control 
+                    type="number"
+                    name="duration"
+                    placeholder="Enter duration"
+                    value={newCourse.duration}
+                    onChange={handleChange}
+                    required
+                />
+            </Form.Group>
+
+            <Button type="submit" variant="primary" className="w-100">Add Course</Button>
+        </Form>
     );
 };
 

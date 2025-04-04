@@ -4,6 +4,7 @@ import EditCourseForm from "../components/courses/EditCourseForm";
 import CourseList from "../components/courses/CourseList";
 import SortFilterControls from "../components/courses/SortFilterControls";
 import "../styles/Courses.css"; // Import styles
+import { Container, Row, Col, Card } from "react-bootstrap"; // Bootstrap imports
 
 const Courses = () => {
     const [courses, setCourses] = useState([]);
@@ -46,32 +47,48 @@ const Courses = () => {
     );
 
     return (
-        <div className="courses-container">
-            <h2 className="text-center mt-4">📚 Available Courses</h2>
+        <Container fluid className="mt-4">
+            <Row>
+                <Col md={12}>
+                    <h2 className="text-center course-header">📚 Available Courses</h2>
+                </Col>
+            </Row>
 
-            <SortFilterControls 
-                sortOption={sortOption} 
-                setSortOption={setSortOption} 
-                instructorFilter={filterInstructor} 
-                setInstructorFilter={setFilterInstructor} 
-            />
+            <Row className="mt-3">
+                <Col md={4}>
+                    <Card className="p-3 shadow-sm">
+                        <SortFilterControls 
+                            sortOption={sortOption} 
+                            setSortOption={setSortOption} 
+                            instructorFilter={filterInstructor} 
+                            setInstructorFilter={setFilterInstructor} 
+                        />
+                    </Card>
 
-            <AddCourseForm onAddCourse={handleAddCourse} />
+                    <Card className="p-3 mt-3 shadow-sm">
+                        <AddCourseForm onAddCourse={handleAddCourse} />
+                    </Card>
+                </Col>
 
-            {editingCourse && (
-                <EditCourseForm 
-                    course={editingCourse} 
-                    onUpdateCourse={handleUpdateCourse} 
-                    onCancel={() => setEditingCourse(null)} 
-                />
-            )}
+                <Col md={8}>
+                    <Card className="p-3 shadow-sm">
+                        {editingCourse && (
+                            <EditCourseForm 
+                                course={editingCourse} 
+                                onUpdateCourse={handleUpdateCourse} 
+                                onCancel={() => setEditingCourse(null)} 
+                            />
+                        )}
 
-            <CourseList 
-                courses={filteredCourses} 
-                onEdit={setEditingCourse} 
-                onDelete={handleDeleteCourse} 
-            />
-        </div>
+                        <CourseList 
+                            courses={filteredCourses} 
+                            onEdit={setEditingCourse} 
+                            onDelete={handleDeleteCourse} 
+                        />
+                    </Card>
+                </Col>
+            </Row>
+        </Container>
     );
 };
 
